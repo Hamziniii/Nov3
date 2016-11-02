@@ -13,7 +13,7 @@ def draw_circle(board, circle, radius, colors):
 
 
 def draw_point(board, point):
-    board.circle(point, 4, outline=None, fill="white")
+    board.circle(point, 2, outline=None, fill="white")
 
 
 class Circle(object):
