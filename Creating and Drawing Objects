@@ -1,46 +1,93 @@
+# Importing Swampy
 from swampy.World import World
 
+# Creating the canvas
 world = World()
 canvas = world.ca(width=200, height=200, background='white')
 
 
 def draw_rectangle(board, rectangle, color):
+    # Defining the function to draw rectangles
     board.rectangle(rectangle, outline='black', width=1, fill=color)
 
 
 def draw_circle(board, circle, radius, colors):
+    # Defining the function to draw circles
     board.circle(circle, radius, outline=None, fill=colors)
 
 
 def draw_point(board, point):
-    board.circle(point, 2, outline=None, fill="white")
+    # Defining the function to draw a point
+    board.circle(point, 4, outline=None, fill="yellow")
 
 
 class Circle(object):
     """
-    This is a class for making a circle to use with Swampy ( Created by: Allen B. Downey)
+    This is a class for making a circle, to using Swampy ( Created by: Allen B. Downey)
     Attributes: coordinates, radius, color
     """
     coordinates = None
     radius = None
     color = None
 
+
+class Rectangle(object):
+    """
+    This is a class for making a Rectangle, using Swampy ( Created by: Allen B. Downey)
+    Attributes: coordinates and color
+    """
+    coordinates = None
+    color = None
+
+
+class Point(object):
+    """
+    This is a class for making points to using Swampy ( Created by: Allen B. Downey)
+    Attributes: coordinates
+    """
+    coordinates = None
+
+# Making 3 objects of the Rectangle Class and Declaring it's Attributes, then drawing them.
+rectangle3 = Rectangle()
+rectangle3.coordinates = [[-100, 90], [100, -90]]
+rectangle3.radius = 25
+rectangle3.color = "purple"
+draw_rectangle(canvas, rectangle3.coordinates, rectangle3.color)
+
+rectangle2 = Rectangle()
+rectangle2.coordinates = [[-90, 80], [90, -80]]
+rectangle2.radius = 25
+rectangle2.color = "blue"
+draw_rectangle(canvas, rectangle2.coordinates, rectangle2.color)
+
+rectangle1 = Rectangle()
+rectangle1.coordinates = [[-80, 70], [80, -70]]
+rectangle1.radius = 25
+rectangle1.color = "white"
+draw_rectangle(canvas, rectangle1.coordinates, rectangle1.color)
+
+# Making 3 objects of the Circle Class and Declaring it's Attributes, then drawing them.
 circle1 = Circle()
 circle1.coordinates = [-15, 30]
 circle1.radius = 25
-circle1.color = "grey"
+circle1.color = "red"
 draw_circle(canvas, circle1.coordinates, circle1.radius, circle1.color)
 
 circle2 = Circle()
 circle2.coordinates = [-43, -15]
 circle2.radius = 20
-circle2.color = "blue"
+circle2.color = "orange"
 draw_circle(canvas, circle2.coordinates, circle2.radius, circle2.color)
 
 circle3 = Circle()
 circle3.coordinates = [20, -27]
 circle3.radius = 30
-circle3.color = "black"
+circle3.color = "green2"
 draw_circle(canvas, circle3.coordinates, circle3.radius, circle3.color)
+
+# Making an object from the Point Class and Declaring it's Attributes, then drawing it.
+point1 = Point()
+point1.coordinates = [-15, -6]
+draw_point(canvas, point1.coordinates)
 
 world.mainloop()
