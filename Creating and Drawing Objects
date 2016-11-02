@@ -1,0 +1,46 @@
+from swampy.World import World
+
+world = World()
+canvas = world.ca(width=200, height=200, background='white')
+
+
+def draw_rectangle(board, rectangle, color):
+    board.rectangle(rectangle, outline='black', width=1, fill=color)
+
+
+def draw_circle(board, circle, radius, colors):
+    board.circle(circle, radius, outline=None, fill=colors)
+
+
+def draw_point(board, point):
+    board.circle(point, 4, outline=None, fill="white")
+
+
+class Circle(object):
+    """
+    This is a class for making a circle to use with Swampy ( Created by: Allen B. Downey)
+    Attributes: coordinates, radius, color
+    """
+    coordinates = None
+    radius = None
+    color = None
+
+circle1 = Circle()
+circle1.coordinates = [-15, 30]
+circle1.radius = 25
+circle1.color = "grey"
+draw_circle(canvas, circle1.coordinates, circle1.radius, circle1.color)
+
+circle2 = Circle()
+circle2.coordinates = [-43, -15]
+circle2.radius = 20
+circle2.color = "blue"
+draw_circle(canvas, circle2.coordinates, circle2.radius, circle2.color)
+
+circle3 = Circle()
+circle3.coordinates = [20, -27]
+circle3.radius = 30
+circle3.color = "black"
+draw_circle(canvas, circle3.coordinates, circle3.radius, circle3.color)
+
+world.mainloop()
