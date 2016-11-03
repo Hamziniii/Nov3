@@ -1,0 +1,49 @@
+# Class Diagram:
+# ----------------------------------------------------
+# -                 StudentClass                     -
+# ----------------------------------------------------
+# - Attributes: studentID, firstName, lastName, email-
+# ----------------------------------------------------
+# - Functions : (none)                               -
+# ----------------------------------------------------
+
+
+class StudentClass:
+    """
+    This class will hold the information of a certain student.
+    It will hold their Student ID, First Name, Last Name, Email.
+    Attributes : studentID, firstName, lastName, email
+    """
+
+    studentID = ""
+    firstName = ""
+    lastName = ""
+    email = ""
+
+
+def print_info(student):
+    print("Student ID: " + student.studentID)
+    print("First Name: " + student.firstName)
+    print("Last Name: " + student.lastName)
+    print("Email: " + student.email + "\n")
+
+student1 = StudentClass
+student1.studentID = "13352536"
+student1.firstName = "James "
+student1.lastName = "Smith"
+student1.email = "Jsmith@StudentEmail.org"
+print_info(student1)
+
+student2 = StudentClass
+student2.studentID = "18245726"
+student2.firstName = "John "
+student2.lastName = "Johnson"
+student2.email = "Jjohnson@StudentEmail.org"
+print_info(student2)
+
+student3 = StudentClass
+student3.studentID = "15242535"
+student3.firstName = "Robert "
+student3.lastName = "Williams"
+student3.email = "Rwilliams@StudentEmail.org"
+print_info(student3)
